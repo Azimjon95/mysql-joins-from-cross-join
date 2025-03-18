@@ -15,3 +15,6 @@ CREATE TABLE departments (
 INSERT INTO employees (id, name) VALUES (1, 'Alice'), (2, 'Bob'), (3, 'Charlie');
 INSERT INTO departments (id, department_name, id_employee) VALUES (1, 'HR', 1), (2, 'Engineering', 2);
 
+SELECT employees.name, departments.department_name
+FROM employees
+CROSS JOIN departments;
