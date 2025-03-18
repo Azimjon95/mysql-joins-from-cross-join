@@ -6,14 +6,12 @@ CREATE TABLE employees (
 
 CREATE TABLE departments (
     id INT PRIMARY KEY,
-    department_name VARCHAR(50)
+    department_name VARCHAR(50),
+    id_employee INT,  -- Foreign key linking to employees
+    FOREIGN KEY (id_employee) REFERENCES employees(id)
 );
 
 -- Inserting sample data
 INSERT INTO employees (id, name) VALUES (1, 'Alice'), (2, 'Bob'), (3, 'Charlie');
-INSERT INTO departments (id, department_name) VALUES (1, 'HR'), (2, 'Engineering');
+INSERT INTO departments (id, department_name, id_employee) VALUES (1, 'HR', 1), (2, 'Engineering', 2);
 
--- Performing a CROSS JOIN (Cartesian product)
-SELECT employees.name, departments.department_name
-FROM employees
-CROSS JOIN departments;
