@@ -2,4 +2,4 @@
 SELECT employees.name, departments.department_name
 FROM employees
 CROSS JOIN departments
-WHERE employees.id = departments.id;
+WHERE employees.id = departments.id_employee;
